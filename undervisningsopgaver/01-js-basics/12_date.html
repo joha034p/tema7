@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Date reglen: Half your age plus seven</h1>
+    <p>Indtast din egen alder</p>
+    <input type="text" id="egen_alder">
+    <p>Indtast din dates alder</p>
+    <input type="text" id="dates_alder">
+    <button>Klik og se om reglen holder</button>
+
+    <script>
+        //KAN IKKE FINDE UD AF OPGAVEN
+        //HVORDAN LAVER MAN IF ELSE STATEMENTET
+
+        document.querySelector("button").addEventListener("click", clickButton);
+
+        function clickButton() {
+            let egenAlder = document.querySelector("#egen_alder").value;
+            let datesAlder = document.querySelector("#dates_alder").value;
+            let aldersforskel = egenAlder / 2 + 7;
+            let resultat;
+
+            if (aldersforskel == true) {
+                resultat = `Jeres aldersforskel overholder reglen.`;
+            } else if (aldersforskel == false) {
+                resultat = `Jeres aldersforskel overholder ikke reglen.`;
+            } else {
+                resultat;
+            }
+
+            console.log(resultat);
+        }
+
+    </script>
+</body>
+
+</html>
