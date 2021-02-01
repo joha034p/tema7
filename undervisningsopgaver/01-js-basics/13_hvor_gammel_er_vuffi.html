@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <p>Indtast din hunds alder</p>
+    <input type="text" id="hunde_alder1">
+    <button id="button1">Udregn til menneskealder: Gamle regel</button>
+    <p>Indtast din hunds alder</p>
+    <input type="text" id="hunde_alder2">
+    <button id="button2">Udregn til menneskealder: Nye regel</button>
+
+    <script>
+        document.querySelector("#button1").addEventListener("click", clickButton);
+        document.querySelector("#button2").addEventListener("click", clickButton2);
+
+        function clickButton() {
+            let hundealder1 = document.querySelector("#hunde_alder1").value;
+            let menneskealder1 = hundealder1 * 7;
+            console.log(`Din hunds menneskealder er ${menneskealder1} år gammel ifølge den gamle regel.`)
+        }
+
+        function clickButton2() {
+            let hundealder2 = document.querySelector("#hunde_alder2").value;
+            let menneskealder2 = 16 * Math.log(hundealder2) + 31;
+            console.log(`Din hunds menneskealder er ${menneskealder2} år gammel ifølge den gamle regel.`)
+        }
+
+    </script>
+</body>
+
+</html>
