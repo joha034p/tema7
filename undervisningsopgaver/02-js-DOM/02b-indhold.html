@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Øvelse 1: HTML Struktur</title>
+    <link rel="stylesheet" href="02b-indhold.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Titel</h1>
+        </header>
+        <div id="wrapper">
+            <section id="section_1">
+                <h2>Undertitel</h2>
+                <article id="article_1">
+                    <img src="https://placeimg.com/640/480/nature">
+                    <h3>Article 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore harum, cumque, eaque ad vel eius corporis assumenda odio, consequatur doloremque enim, consequuntur minima facilis consectetur cum pariatur aspernatur eligendi. Recusandae fuga blanditiis ex expedita incidunt odit et, sint harum unde aliquam, obcaecati ad. Ab aliquid quidem fuga, sed dignissimos omnis?</p>
+                </article>
+            </section>
+
+            <section id="section_2">
+                <article id="article_2">
+                    <img src="https://placeimg.com/640/480/animals">
+                    <h3>Article 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore harum, cumque, eaque ad vel eius corporis assumenda odio, consequatur doloremque enim, consequuntur minima facilis consectetur cum pariatur aspernatur eligendi. Recusandae fuga blanditiis ex expedita incidunt odit et, sint harum unde aliquam, obcaecati ad. Ab aliquid quidem fuga, sed dignissimos omnis?</p>
+                </article>
+            </section>
+        </div>
+    </main>
+    <footer>This is the footer</footer>
+    <script>
+        const overskrift = document.querySelector("h1");
+        overskrift.textContent;
+        console.log(overskrift.textContent);
+        overskrift.textContent = "Billeder";
+        console.log(overskrift.textContent);
+
+        const underOverskrift = document.querySelector("h2");
+        underOverskrift.textContent;
+        console.log(underOverskrift.textContent);
+        underOverskrift.textContent = "Natur og Dyr";
+        console.log(underOverskrift.textContent);
+
+        const naturArtikel = document.querySelector("#article_1 h3");
+        naturArtikel.textContent;
+        console.log(naturArtikel.textContent);
+        naturArtikel.textContent = "Natur";
+        console.log(naturArtikel.textContent);
+
+        const dyreArtikel = document.querySelector("#article_2 h3");
+        dyreArtikel.textContent;
+        console.log(dyreArtikel.textContent);
+        dyreArtikel.textContent = "Dyr";
+        console.log(dyreArtikel.textContent);
+
+        const naturTekst = document.querySelector("#article_1 p");
+        naturTekst.textContent;
+        console.log(naturTekst.textContent);
+        naturTekst.innerHTML = "Her er der et <b>natur</b> billede.";
+        console.log(naturTekst.textContent);
+
+        const dyreTekst = document.querySelector("#article_2 p");
+        dyreTekst.textContent;
+        console.log(dyreTekst.textContent);
+        dyreTekst.innerHTML = "Her er der et <b>dyre</b> billede.";
+        console.log(dyreTekst.textContent);
+
+        const wrapper = document.querySelector("#wrapper");
+        wrapper.textContent;
+        console.log(wrapper.textContent);
+
+        const section1 = document.querySelector("#section_1");
+        section1.textContent;
+        console.log(section1.textContent);
+
+        const article1 = document.querySelector("#article_1");
+        article1.textContent;
+        console.log(article1.textContent);
+
+        const section2 = document.querySelector("#section_2");
+        section2.textContent;
+        console.log(section2.textContent);
+
+        const article2 = document.querySelector("#article_2");
+        article2.textContent;
+        console.log(article2.textContent);
+
+        const footer = document.querySelector("footer");
+        footer.textContent;
+        console.log(footer.textContent);
+        footer.textContent = "Dette er footeren";
+        console.log(footer.textContent);
+
+    </script>
+</body>
+
+</html>
