@@ -15,9 +15,11 @@
 
     <script>
         document.querySelector("button").addEventListener("click", clickButton);
+        const tal = Math.round(Math.random() * 20);
+        let antalGæt = 0;
 
         function clickButton() {
-            let tal = Math.round(Math.random() * 20);
+            antalGæt++;
             let gæt = document.querySelector("#brugerens_gæt").value;
             //HVORDAN LAVER MAN EN TÆLLER DER VISER HVOR MANGE GANGE DER ER BLEVET GÆTTET?
             //OG EN RESET KNAP
@@ -28,7 +30,7 @@
             } else if (gæt < tal) {
                 resultat = `Du gættede for lavt! Prøv igen.`;
             } else if (gæt == tal) {
-                resultat = `Tillykke! Du gættede rigtigt! Du gjorde det på x forsøg`;
+                resultat = `Tillykke! Du gættede rigtigt! Du gjorde det på ${antalGæt} forsøg`;
             }
 
 
