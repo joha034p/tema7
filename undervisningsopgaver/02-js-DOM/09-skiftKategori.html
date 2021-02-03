@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+            border: 1px solid;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-gap: 20px;
+            margin: auto;
+            width: 90%;
+            height: 100%;
+        }
+
+        article {
+            display: grid;
+            border: 1px solid;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            text-align: center;
+            border: 1px solid;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Titel</h1>
+        </header>
+        <h2>Undertitel</h2>
+        <section>
+            <article id="article_1">
+                <img src="https://placeimg.com/640/480/nature" alt="natur billede">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore harum, cumque, eaque ad vel eius corporis assumenda odio, consequatur doloremque enim, consequuntur minima facilis consectetur cum pariatur aspernatur eligendi. Recusandae fuga blanditiis ex expedita incidunt odit et, sint harum unde aliquam, obcaecati ad. Ab aliquid quidem fuga, sed dignissimos omnis?</p>
+            </article>
+
+            <article id="article_2">
+                <img src="https://placeimg.com/640/480/animals" alt="dyre billede">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore harum, cumque, eaque ad vel eius corporis assumenda odio, consequatur doloremque enim, consequuntur minima facilis consectetur cum pariatur aspernatur eligendi. Recusandae fuga blanditiis ex expedita incidunt odit et, sint harum unde aliquam, obcaecati ad. Ab aliquid quidem fuga, sed dignissimos omnis?</p>
+            </article>
+        </section>
+    </main>
+    <footer>This is the footer</footer>
+    <script>
+        const kategorier = ["animals", "arch", "people", "nature", "tech"];
+
+        const pic1 = document.querySelector("#article_1 img");
+        pic1.textContent;
+        console.log(pic1.textContent);
+
+        const pic2 = document.querySelector("#article_2 img");
+        pic2.textContent;
+        console.log(pic2.textContent);
+
+        let mainWrapper = document.querySelector("section");
+
+        //nyt article  element
+        let newArticle = document.createElement("article");
+
+        //nyt h3 element
+        let h3Overskrift = document.createElement("h3");
+
+        //tekst til overskriften
+        let overskriftText = document.createTextNode("Article 3");
+
+        //indsæt tekst i overskriften
+        h3Overskrift.appendChild(overskriftText);
+
+        //tilføj overskrift til article
+        newArticle.appendChild(h3Overskrift);
+
+        //tilføj article til wrapper
+        mainWrapper.appendChild(newArticle);
+
+        document.addEventListener("DOMContentLoaded", start);
+        pic1.addEventListener("click", skiftBillede);
+        pic2.addEventListener("click", skiftKategori);
+
+        function start() {
+            console.log("siden er loaded");
+        }
+
+        function skiftBillede() {
+            pic1.src = "https://placeimg.com/400/300/arch?t=" + Math.floor(Math.random() * 10) + 1;
+        }
+
+        function skiftKategori() {
+            const nummer = Math.round(Math.random() * 4);
+            pic2.src = "https://placeimg.com/400/300/" + kategorier[nummer];
+            pic2.alt = kategorier[nummer];
+        }
+
+    </script>
+</body>
+
+</html>
