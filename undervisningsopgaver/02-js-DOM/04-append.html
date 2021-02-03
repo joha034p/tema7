@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Øvelse 1: HTML Struktur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            border: 1px solid;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-gap: 20px;
+            margin: auto;
+            width: 90%;
+            height: 100%;
+        }
+
+        article {
+            display: grid;
+            border: 1px solid;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            text-align: center;
+            border: 1px solid;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Titel</h1>
+        </header>
+        <h2>Undertitel</h2>
+        <section>
+            <article id="article_1">
+                <img src="https://placeimg.com/640/480/nature" alt="natur billede">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore harum, cumque, eaque ad vel eius corporis assumenda odio, consequatur doloremque enim, consequuntur minima facilis consectetur cum pariatur aspernatur eligendi. Recusandae fuga blanditiis ex expedita incidunt odit et, sint harum unde aliquam, obcaecati ad. Ab aliquid quidem fuga, sed dignissimos omnis?</p>
+            </article>
+
+            <article id="article_2">
+                <img src="https://placeimg.com/640/480/animals" alt="dyre billede">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore harum, cumque, eaque ad vel eius corporis assumenda odio, consequatur doloremque enim, consequuntur minima facilis consectetur cum pariatur aspernatur eligendi. Recusandae fuga blanditiis ex expedita incidunt odit et, sint harum unde aliquam, obcaecati ad. Ab aliquid quidem fuga, sed dignissimos omnis?</p>
+            </article>
+        </section>
+    </main>
+    <footer>This is the footer</footer>
+    <script>
+        let mainWrapper = document.querySelector("section");
+
+        //nyt article  element
+        let newArticle = document.createElement("article");
+
+        //nyt h3 element
+        let h3Overskrift = document.createElement("h3");
+
+        //tekst til overskriften
+        let overskriftText = document.createTextNode("Article 3");
+
+        //indsæt tekst i overskriften
+        h3Overskrift.appendChild(overskriftText);
+
+        //tilføj overskrift til article
+        newArticle.appendChild(h3Overskrift);
+
+        //tilføj article til wrapper
+        mainWrapper.appendChild(newArticle);
+
+    </script>
+</body>
+
+</html>
