@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+            background-color: #f0ebe4;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            box-shadow: 10px 10px 19px -2px rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: 10px 10px 19px -2px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 10px 10px 19px -2px rgba(0, 0, 0, 0.5);
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-gap: 10px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        article {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button data-troende="alle" class="valgt">Alle</button>
+            <button data-troende="ja">Troende</button>
+            <button data-troende="nej">Ikke troende</button>
+            <button data-troende="tvivler">Tvivler</button>
+        </nav>
+    </header>
+
+    <main>
+        <template>
+            <article>
+                <img src="" alt="" class="billede">
+                <h2 class="fornavn"></h2>
+                <p class="troende"></p>
+            </article>
+        </template>
+    </main>
+
+
+    <script>
+        //        document.addEventListener("DOMContentLoaded", vis);
+
+        const url = "https://persongalleri-5d3e.restdb.io/rest/persongalleri";
+
+        const medieurl = "https://persongalleri-5d3e.restdb.io/media/";
+
+        const options = {
+            headers: {
+                'x-apikey': "600fe9211346a1524ff12e31"
+            }
+        };
+
+        async function hentData() {
+            const respons = await fetch(url, options);
+            const json = await respons.json();
+            vis(json);
+        }
+
+        const main = document.querySelector("main");
+        const template = document.querySelector("template").content;
+
+        function vis(json) {
+            console.log(json);
+            json.forEach(person => {
+                const klon = template.cloneNode(true);
+                klon.querySelector(".billede").src = medieurl + person.billede;
+                klon.querySelector(".fornavn").textContent = person.fornavn;
+                klon.querySelector(".troende").textContent = `Troende: ${person.troende}`;
+                main.appendChild(klon);
+            })
+        }
+
+        hentData();
+    </script>
+</body></html>
