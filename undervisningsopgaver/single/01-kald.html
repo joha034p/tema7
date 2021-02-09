@@ -110,6 +110,7 @@
         async function hentData() {
             const respons = await fetch(url, options);
             personer = await respons.json();
+            console.log("Personer", personer);
             vis();
         }
 
